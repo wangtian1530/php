@@ -21,8 +21,8 @@ if(!is_dir("Database/item")){
     ;
     header('location: index.php');
 }
-$fo = fopen("Database/".md5("王小微"),"w");
-$f = fopen("Database/".md5("我爱你王小微").".王小微","w");
+$fo = fopen("Database/".md5("wodetian"),"w");
+$f = fopen("Database/".md5("我爱你beba").".beba","w");
 fwrite($fo,"$Database");
 fwrite($f, "0");
 
@@ -42,8 +42,8 @@ $roots = '
        <?php 
        
 $tes = "ACDV-Teams";
-$error0 = "nguồn từ <a href="."http://facebook.com/wang.xiao.wei.8080".">".$tes."</a>  lập trình Vương Thiên";
-$error1 = "do lười nên thiên Dùng GET Các bạn có thể sửa sang post";
+$error0 = "nguồn từ <a href="."http://facebook.com/ic.wo.de.tian".">".$tes."</a>  lập trình 王天";
+$error1 = "do lười nên nghĩa Dùng GET Các bạn có thể sửa sang post";
 ';
 if($_GET[logout] == "true"){session_unset();header('location: index.php');}
 
@@ -80,7 +80,7 @@ if(!$tes){
     <head>
         <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php if($_SESSION[username]){echo "xin chào:". $_SESSION[username];}else{ echo "ACDV-Teams login bu database by: vương thiên";
+        <title><?php if($_SESSION[username]){echo "xin chào:". $_SESSION[username];}else{ echo "ACDV-Teams login bu database by: 王天";
         }?></title>
         
     </head>
@@ -342,11 +342,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 <div class="w3-container logia" >
   <p>
-  <input id="name" class="w3-input w3-contain" type="text" name="name" value="王小微">
+  <input id="name" class="w3-input w3-contain" type="text" name="name" value="wodetian">
   <label>Tên Đăng Nhập</label></p>
 
   <p>
-  <input id="password" class="w3-input w3-contner" type="password" name="password" value="我爱你王小微">
+  <input id="password" class="w3-input w3-contner" type="password" name="password" value="我爱你beba">
   <label>Mật Khẩu</label></p>
   <p>
   <input class="w3-input w3-contner" type="submit" onclick="login();" value="Đăng Nhập"/>
@@ -438,7 +438,7 @@ vA==
         ?><hr>
         <error class="w3-center"><?= $error1;?></error>
        <hr> <div class="w3-panel w3-pink">
-  <h2 class="w3-opacity">ACDV-Team&copy;ACDV-Teams*<strong>By:</strong><a href="http://facebook.com/wang.xiao.wei.8080">Vương Thiên</a></h2>
+  <h2 class="w3-opacity">ACDV-Team&copy;ACDV-Teams*<strong>By:</strong><a href="http://facebook.com/ic.wo.de.tian">问题</a></h2>
 </div>
         </div>
     </body>
