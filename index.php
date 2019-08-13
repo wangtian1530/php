@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <?php
 if(!is_dir("Database")){
@@ -12,24 +11,24 @@ if(!is_dir("Database")){
     echo " <hr> nguồn quan trọng Không thể thiếu ";
     mkdir("Database");
     mkdir("Database/item");
-    echo "</div>";
+    echo "</div>"; 
+    $fo = fopen("Database/".md5("wodetian"),"w");
+$f = fopen("Database/".md5("我爱你beba").".beba","w");
+fwrite($fo,"$Database");
+fwrite($f, "0");
     exit;
     
 }
 if(!is_dir("Database/item")){
-    mkdir("Database/item")
-    ;
+    mkdir("Database/item")    ;
     header('location: index.php');
 }
-$fo = fopen("Database/".md5("wodetian"),"w");
-$f = fopen("Database/".md5("我爱你beba").".beba","w");
-fwrite($fo,"$Database");
-fwrite($f, "0");
-
+if(isset($_GET['new'])){
 if($_GET["new"] == "true"){
     mkdir("Database");
     header('location: index.php');
-}
+} 
+};
 if(!is_dir('Database')){
     echo 'Vui lòng Tạo thư Mục Database';
     echo "<a href="."?new=true".">Thêm Tự Động</a>";
@@ -45,13 +44,12 @@ $tes = "ACDV-Teams";
 $error0 = "nguồn từ <a href="."http://facebook.com/ic.wo.de.tian".">".$tes."</a>  lập trình 王天";
 $error1 = "do lười nên nghĩa Dùng GET Các bạn có thể sửa sang post";
 ';
-if($_GET[logout] == "true"){session_unset();header('location: index.php');}
-
-if($_GET["name"]){
-    if($_SESSION[username]){
+if(isset($_GET['logout'])){session_unset();header('location: index.php');}
+if(isset($_GET["name"])){
+    if($_SESSION['username']){
     header('location: index.php');
     }
-}
+};
 if(fopen("Database/Database.sql","r")){
     $itm = fopen("Database/item/".$_SERVER['REQUEST_TIME'],"a");
     fwrite($itm,$_SERVER['REQUEST_TIME_FLOAT']);
@@ -61,7 +59,6 @@ if(fopen("Database/Database.sql","r")){
     mkdir("Database/item");
     header('location: index.php');
 }
-
 include('Database/Database.sql');
 if(!$tes){
     $error0 = "Cảnh Báo vui lòng Tải lại trang ";
@@ -80,7 +77,7 @@ if(!$tes){
     <head>
         <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php if($_SESSION[username]){echo "xin chào:". $_SESSION[username];}else{ echo "ACDV-Teams login bu database by: 王天";
+        <title><?php if($_SESSION['username']){echo "xin chào:". $_SESSION['username'];}else{ echo "ACDV-Teams login bu database by: 王天";
         }?></title>
         
     </head>
@@ -332,19 +329,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
        <error class="w3-center"><?= $error0;?></error>
         <?php
         
-        if(!isset($_SESSION[login_data])){
+        if(!isset($_SESSION['login_data'])){
             echo '
             <div class="w3-center w3-container w3ang">
             <div class="w3-container w3-orange">
   <h2>Đăng Nhập</h2>
 </div>
-
-
 <div class="w3-container logia" >
   <p>
   <input id="name" class="w3-input w3-contain" type="text" name="name" value="wodetian">
   <label>Tên Đăng Nhập</label></p>
-
   <p>
   <input id="password" class="w3-input w3-contner" type="password" name="password" value="我爱你beba">
   <label>Mật Khẩu</label></p>
@@ -353,17 +347,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   <input class=" w3-input w3-coainer" type="button" onclick="users();" value="Đăng Ký"/>
 </div>
 </div>
-
   ';
         }else{
-            echo '<h1> Xin chào:'.$_SESSION[username].'</h1>';
+            echo '<h1> Xin chào:'.$_SESSION['username'].'</h1>';
             echo "<a clss='w3-btn ButtonText' type="."radio"." href ='". "#logout=true"." 'onclick='logout();'>Logout</a>";
         }
         
         // sử lý
-        if($_GET[login]){
+        if(isset($_GET['login'])){
             $name = $_GET["name"];
-            $password = $_GET[password];
+            $password = $_GET['password'];
             
             $acdv = 'Database/'.md5($_GET["name"]);
 $data = @fopen($acdv, "r");
@@ -376,13 +369,13 @@ if (!$data) {
   #header('location: index.php');
 }
 else{
-    $teams = "Database/".md5($_GET[password]).".".$_GET[name];
+    $teams = "Database/".md5($_GET['password']).".".$_GET['name'];
     $datatab = @fopen($teams,"r");
     if(!$datatab){
         echo "<script>alert('mật Khẩu sai'); window.location = 'index.php';</script>";
     }else{
-        $_SESSION[login_data] = 0;
-        $_SESSION[username] = $_GET[name];
+        $_SESSION['login_data'] = 0;
+        $_SESSION['username'] = $_GET['name'];
         echo "<script>window.location = 'index.php';</script>";
     }
     
@@ -392,9 +385,9 @@ else{
             
         }
         
-        if($_GET[users]){
+        if(isset($_GET['users'])){
             
-            $path = "Database/".md5($_GET[name]);
+            $path = "Database/".md5($_GET['name']);
 $fp = @fopen($path, "r");
   
 // Kiểm tra file mở thành công không
@@ -402,7 +395,6 @@ if ($fp) {
     echo '<script>alert("Tài Khoản đã Được Đăng ký");window.location = "index.php";</script>';
 }else{
     
-
             
             
             
