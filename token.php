@@ -31,5 +31,5 @@ return $Hash;
 } 
 
 //Here you specify how many characters the returning string must have 
-
+echo token(5000000000000);
 ?>  
