@@ -109,10 +109,10 @@ if(!$tes){
         <style>
             /* W3.CSS 4.10 February 2018 by Jan Egil and Borge Refsnes */
             html{
-                background:url(http://localhost:8080/admin/index.php?user/publicLink&fid=6be1huJnK-CyqrrUjKElpxUbwnvY9e9UCD4oIB3HgMFjp5QI2eiJ0sQyGXUmtxxMbttKjzi8BqQeMRs2nOThkJbwE7Vts4uoD26z5n9dkxpwdkTf1CK8qujnKRH7p1Y8htI0TSpUxE4SrpD4o2Q&file_name=/received_1851396094960732.jpeg);
+                #background:url(http://localhost:8080/admin/index.php?user/publicLink&fid=6be1huJnK-CyqrrUjKElpxUbwnvY9e9UCD4oIB3HgMFjp5QI2eiJ0sQyGXUmtxxMbttKjzi8BqQeMRs2nOThkJbwE7Vts4uoD26z5n9dkxpwdkTf1CK8qujnKRH7p1Y8htI0TSpUxE4SrpD4o2Q&file_name=/received_1851396094960732.jpeg);
             }
             .logina{
-                background: url(00.png);
+                #background: url(00.png);
             }
 *{
     margin: 0;
@@ -139,7 +139,7 @@ error{
     .load {
         width: 100%;
         height: 100%;
-        background:url(http://localhost:8080/admin/index.php?user/publicLink&fid=05fdt0XKHQdGBAlqMsssfvqElyXELELLc2-I47ExaDoQB4pcLOY_-TZ9R8aI9hchMppnmNBAQq6HPzPvfS9EVL4x024-5rRAeOxVx7YFk4vX03quZBHUe2KC7PLc8vL50gIPUjkHfFE&file_name=/FB_IMG_1559496525129.jpg) no-repeat center;
+        #background:url(http://localhost:8080/admin/index.php?user/publicLink&fid=05fdt0XKHQdGBAlqMsssfvqElyXELELLc2-I47ExaDoQB4pcLOY_-TZ9R8aI9hchMppnmNBAQq6HPzPvfS9EVL4x024-5rRAeOxVx7YFk4vX03quZBHUe2KC7PLc8vL50gIPUjkHfFE&file_name=/FB_IMG_1559496525129.jpg) no-repeat center;
         position: fixed;
         top: 0;
         left: 0;
